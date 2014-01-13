@@ -673,7 +673,7 @@ class XML_Manager extends Main
                             {
                                 foreach($value['elements'] as $dtd_element_key => $dtd_element_value)
                                 {
-                                    // @TODO implement here and in xmlstring_to_array
+                                    // @todo implement here and in xmlstring_to_array
                                 }
                             }
                             $this->xmlwriter_object->endDTD();
