@@ -1,22 +1,18 @@
 <?php
 /**
- * Debug_Logging class test file
- * 
- * This test script runns tests on the Class.
- * 
  * @author Gerhard Steinbeis (info [at] tinned-software [.] net)
- * @copyright Copyright (c) 2008 - 2009, Gerhard Steinbeis
+ * @copyright Copyright (c) 2008 - 2014, Gerhard Steinbeis
+ * @version 0.7.1
  * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * 
  * @package framework
  * @subpackage debug
  * 
- * @version 0.7
+ * Debug_Logging class test file
  * 
+ * This test script runs tests on the Class.
  * 
 **/
 
-framework_test_show("START");
 
 // Delete logging object if exists
 $GLOBALS['DBG'] = NULL;
@@ -24,8 +20,12 @@ unset($GLOBALS['DBG']);
 
 
 // include debug_logging class (with time measurement)
+include_once(dirname(__FILE__).'/../functions/test_show.php');
 include_once(dirname(__FILE__).'/../classes/debug_logging.class.php');
 include_once(dirname(__FILE__).'/../classes/debug_profiler.class.php');
+
+test_show("START");
+
 
 // Define test data
 $data = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ciwgc2VkIGRpYW0gbm9udW15IGVpcm1vZCB0ZW1wb3IgaW52aWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdXlhbSBlcmF0LCBzZWQgZGlhbSB2b2x1cHR1YS4gQXQgdmVybyBlb3MgZXQgYWNjdXNhbSBldCBqdXN0byBkdW8gZG9sb3JlcyBldCBlYSByZWJ1bS4gU3RldCBjbGl0YSBrYXNkIGd1YmVyZ3Jlbiwgbm8gc2VhIHRha2ltYXRhIHNhbmN0dXMgZXN0IExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LiBMb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCwgY29uc2V0ZXR1ciBzYWRpcHNjaW5nIGVsaXRyLCBzZWQgZGlhbSBub251bXkgZWlybW9kIHRlbXBvciBpbnZpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1eWFtIGVyYXQsIHNlZCBkaWFtIHZvbHVwdHVhLiBBdCB2ZXJvIGVvcyBldCBhY2N1c2FtIGV0IGp1c3RvIGR1byBkb2xvcmVzIGV0IGVhIHJlYnVtLiBTdGV0IGNsaXRhIGthc2QgZ3ViZXJncmVuLCBubyBzZWEgdGFraW1hdGEgc2FuY3R1cyBlc3QgTG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQuIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZXRldHVyIHNhZGlwc2NpbmcgZWxpdHIsIHNlZCBkaWFtIG5vbnVteSBlaXJtb2QgdGVtcG9yIGludmlkdW50IHV0IGxhYm9yZSBldCBkb2xvcmUgbWFnbmEgYWxpcXV5YW0gZXJhdCwgc2VkIGRpYW0gdm9sdXB0dWEuIEF0IHZlcm8gZW9zrwdcn8w6erg6";
@@ -48,18 +48,18 @@ foreach(glob($logfile.'*') as $logfile_name)
     $logfile_list .= $logfile_name."\n";
     unlink($logfile_name);
 }
-framework_test_show('INFO', $test_description, 'Deleting logfile ', $logfile_list);
+test_show('INFO', $test_description, 'Deleting logfile ', $logfile_list);
 
 // check if old log files exist
 if(file_exists($logfile.'.0000.log') === TRUE || file_exists($logfile.'.0001.log') === TRUE)
 {
-    framework_test_show('FAILED', $test_description);
-    framework_test_show('END');
+    test_show('FAILED', $test_description);
+    test_show('END');
     return;
 }
 else
 {
-    framework_test_show('PASSED', $test_description);
+    test_show('PASSED', $test_description);
 }
 
 
@@ -162,11 +162,11 @@ foreach($type_found as $type)
     // Check log type ...
     if(preg_match('/Test message of the type '.strtoupper($type).'/', $file_content) > 0)
     {
-        framework_test_show('PASSED', $test_description);
+        test_show('PASSED', $test_description);
     }
     else
     {
-        framework_test_show('FAILED', $test_description);
+        test_show('FAILED', $test_description);
     }
 }
 foreach($type_not_found as $type)
@@ -175,11 +175,11 @@ foreach($type_not_found as $type)
     // Check log type ...
     if(preg_match('/Test message of the type '.strtoupper($type).'/', $file_content) <= 0)
     {
-        framework_test_show('PASSED', $test_description);
+        test_show('PASSED', $test_description);
     }
     else
     {
-        framework_test_show('FAILED', $test_description);
+        test_show('FAILED', $test_description);
     }
 }
 
@@ -187,19 +187,19 @@ $test_description = "Correct memory peak detection";
 if(preg_match('/PEAK START ; \d+\.\d* ; 1021_test_debug_profiler.class.php ; 1[23]\d/', $file_content) > 0 &&
    preg_match('/PEAK STOP  ; \d+\.\d* ; 1021_test_debug_profiler.class.php ; 1[23]\d/', $file_content) > 0)
 {
-    framework_test_show('PASSED', $test_description);
+    test_show('PASSED', $test_description);
 }
 else
 {
-    framework_test_show('FAILED', $test_description);
+    test_show('FAILED', $test_description);
 }
 
 
 
 
-framework_test_show('INFO', 'Logfile content', NULL, "\n<pre>".$file_content."</pre>");
+test_show('INFO', 'Logfile content', NULL, "\n<pre>".$file_content."</pre>");
 
-framework_test_show('END');
+test_show('END');
 
 
 

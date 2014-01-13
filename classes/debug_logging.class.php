@@ -1,25 +1,19 @@
 <?php
 /**
  * @author Gerhard Steinbeis (info [at] tinned-software [dot] net)
- * @copyright Copyright (c) 2008 - 2013
- * @version 0.24.5
+ * @copyright Copyright (c) 2008 - 2014
+ * @version 0.24.6
  * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
  * @package framework
  * @subpackage debug
  * 
  * Debug_Logging class file
  * 
- * @todo Create a method to clone the object
- *       $obj->__clone() ... http://www.php.net/manual/en/language.oop5.cloning.php
  * @todo Add support for multiple white-list and black-list entries.
- * @todo Implement logging to syslogd server (via syslog object provided).
- * @todo Caching log messages should be configured by log type. 
  * @todo logging via email during the destruction. (require log message caching)
  *       error_log("sometext", 1, "email_to@my.domain", "Subject: $email_subject\nFrom: email_from@my.domain\n");
  *       event triggert via error log message (if error sent, mail the last 
  *       and next X log message lines to the email recipient)
- * @todo Add the possibility to add the date and optional the 'am' / 'pm' sign 
- *       to the logfile to be able to indicate the date of the logfile.
  * 
 **/
 

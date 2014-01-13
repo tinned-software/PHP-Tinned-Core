@@ -1,18 +1,17 @@
 <?php
 /**
+ * @author Tyler ASHTON ( tyler [.] ashton [at] tinned-software [.] net 
+ * @copyright Copyright (c) 2010 - 2014
+ * @version 1.1.1
+ * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
+ * @package framework
+ * @subpackage json
+ *
  * JSON Manager class file
  *
  * The JSON Manager class provides a PHP native interface to working with JSON
  * documents. It accepts a number of input formats including JSON
  * a string containing JSON, or a PHP array and can convert between these formats. 
- * 
- * @author Tyler ASHTON ( tyler [.] ashton [at] tinned-software [.] net 
- * @copyright Copyright (c) 2010
- * @version 1.1.0
- * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * @package framework
- * @subpackage json
- *
  *
 **/
 

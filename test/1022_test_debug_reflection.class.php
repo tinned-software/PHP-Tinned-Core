@@ -1,14 +1,18 @@
 <?php
-/*******************************************************************************
- * 
- * @author Gerhard STEINBEIS ( gerhard . steinbeis [at] handykick [.] at )
- * @version 0.4
- * 
+/**
+ * @author Gerhard Steinbeis (info [at] tinned-software [.] net)
+ * @copyright Copyright (c) 2008 - 2014, Gerhard Steinbeis
+ * @version 0.4.1
+ * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
  * @package framework
+ * @subpackage debug
  * 
- * General Framework initialisation
+ * Debug_Logging class test file
  * 
-*******************************************************************************/
+ * This test script runs tests on the Class.
+ * 
+**/
+
 
 echo "<b>Test '".basename(__FILE__)."' ... </b><br/>\n";
 
@@ -21,7 +25,7 @@ unset($GLOBALS["DBG"]);
 
 
 // Create object of logging
-$logfile = dirname(__FILE__)."/../../log/".basename(__FILE__);
+$logfile = dirname(__FILE__)."/../../log/framework_test";
 
 
 session_start();

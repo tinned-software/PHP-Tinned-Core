@@ -1,22 +1,18 @@
 <?php
 /**
+ * @author Gerhard Steinbeis (info [at] tinned-software [.] net)
+ * @copyright Copyright (c) 2008 - 2014, Gerhard Steinbeis
+ * @version 0.7.1
+ * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
+ * @package framework
+ * @subpackage debug
+ * 
  * Debug_Logging class test file
  * 
  * This test script runns tests on the Class.
  * 
- * @author Gerhard Steinbeis (info [at] tinned-software [.] net)
- * @copyright Copyright (c) 2008 - 2009, Gerhard Steinbeis
- * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * 
- * @package framework
- * @subpackage debug
- * 
- * @version 0.7
- * 
- * 
 **/
 
-framework_test_show("START");
 
 // Delete logging object if exists
 $GLOBALS['DBG'] = NULL;
@@ -24,12 +20,13 @@ unset($GLOBALS['DBG']);
 
 
 // include debug_logging class (with time measurement)
+include_once(dirname(__FILE__).'/../functions/test_show.php');
 include_once(dirname(__FILE__).'/../classes/main.class.php');
 include_once(dirname(__FILE__).'/../classes/debug_logging.class.php');
 include_once(dirname(__FILE__).'/../classes/debug_profiler.class.php');
 include_once(dirname(__FILE__).'/1025_testclass.class.php');
 
-
+test_show("START");
 
 
 // Define log path and file basename
@@ -47,18 +44,18 @@ foreach(glob($logfile.'*') as $logfile_name)
     $logfile_list .= $logfile_name."\n";
     unlink($logfile_name);
 }
-framework_test_show('INFO', $test_description, 'Deleting logfile ', $logfile_list);
+test_show('INFO', $test_description, 'Deleting logfile ', $logfile_list);
 
 // check if old log files exist
 if(file_exists($logfile.'.0000.log') === TRUE || file_exists($logfile.'.0001.log') === TRUE)
 {
-    framework_test_show('FAILED', $test_description);
-    framework_test_show('END');
+    test_show('FAILED', $test_description);
+    test_show('END');
     return;
 }
 else
 {
-    framework_test_show('PASSED', $test_description);
+    test_show('PASSED', $test_description);
 }
 
 
@@ -116,11 +113,11 @@ foreach($type_found as $type)
     // Check log type ...
     if(preg_match('/Test message of the type '.strtoupper($type).'/', $file_content) > 0)
     {
-        framework_test_show('PASSED', $test_description);
+        test_show('PASSED', $test_description);
     }
     else
     {
-        framework_test_show('FAILED', $test_description);
+        test_show('FAILED', $test_description);
     }
 }
 foreach($type_not_found as $type)
@@ -129,11 +126,11 @@ foreach($type_not_found as $type)
     // Check log type ...
     if(preg_match('/Test message of the type '.strtoupper($type).'/', $file_content) <= 0)
     {
-        framework_test_show('PASSED', $test_description);
+        test_show('PASSED', $test_description);
     }
     else
     {
-        framework_test_show('FAILED', $test_description);
+        test_show('FAILED', $test_description);
     }
 }
 
@@ -141,19 +138,19 @@ $test_description = "Correct memory peak detection";
 if(preg_match('/PEAK START ; \d+\.\d* ; 1025_testclass.class.php ; 7\d/', $file_content) > 0 &&
    preg_match('/PEAK STOP  ; \d+\.\d* ; 1025_testclass.class.php ; 7\d/', $file_content) > 0)
 {
-    framework_test_show('PASSED', $test_description);
+    test_show('PASSED', $test_description);
 }
 else
 {
-    framework_test_show('FAILED', $test_description);
+    test_show('FAILED', $test_description);
 }
 
 
 
 
-framework_test_show('INFO', 'Logfile content', NULL, "\n<pre>".$file_content."</pre>");
+test_show('INFO', 'Logfile content', NULL, "\n<pre>".$file_content."</pre>");
 
-framework_test_show('END');
+test_show('END');
 
 
 

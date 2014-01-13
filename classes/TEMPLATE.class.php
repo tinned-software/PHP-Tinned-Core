@@ -1,18 +1,17 @@
 <?php
 /**
  * @author Gerhard Steinbeis (info [at] tinned-software [dot] net)
- * @copyright Copyright (c) 2010
- * @version 0.1
+ * @copyright Copyright (c) 2010 - 2014
+ * @version 0.1.0
  * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
  * @package framework
  * @subpackage TEMPLATE
  *
- * @todo template todo item
- * 
  * TEMPLATE
  *
  * This class TEMPLATE ...
  *
+ * @todo template todo item
  *
 **/
 

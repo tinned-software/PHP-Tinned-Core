@@ -1,5 +1,12 @@
 <?php
 /**
+ * @author Tyler ASHTON ( tyler [.] ashton [at] tinned-software [.] net 
+ * @copyright Copyright (c) 2010 - 2014
+ * @version 1.5.2
+ * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
+ * @package framework
+ * @subpackage xml
+ *
  * XML Manager class file
  *
  * The XML Manager class provides a PHP native interface to working with XML
@@ -11,16 +18,9 @@
  * function. The XMLWriter package is required to convert a PHP array back 
  * into a XML text document.
  * 
- * @author Tyler ASHTON ( tyler [.] ashton [at] tinned-software [.] net 
- * @copyright Copyright (c) 2010
- * @version 1.5.1
- * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * @package framework
- * @subpackage xml
- *
  * @link http://www.php.net/manual/en/book.dom.php
  * @link http://www.php.net/manual/en/book.xmlwriter.php
- * @TODO implement namespaces, comments and other node types 
+ * @todo implement namespaces, comments and other node types 
  *
 **/
 

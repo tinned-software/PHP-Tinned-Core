@@ -1,17 +1,21 @@
 <?php
 /**
- * Debug_Reflection file
- * 
- * Class to provide reflection functionality.
- * 
  * @author Gerhard Steinbeis (info [at] tinned-software [dot] net)
- * @copyright Copyright (c) 2008 - 2009, Gerhard Steinbeis
+ * @copyright Copyright (c) 2008 - 2014
+ * @version 0.5.1
  * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * 
  * @package framework
  * @subpackage debug
+ *
+ * Debug_Reflection file
  * 
- * @version 0.5
+ * The Debug_Reflection provides an easy way to log reflection 
+ * information. With This the informations are stored into a logfile or 
+ * into a logging object of the Debug_Logging type.
+ * 
+ * It is also possible to log a list of classes as well as a list of functions 
+ * defined by php code. It is also possible to log the php version and the 
+ * loaded php extensions with there functions.
  * 
  * @todo Add method to log the phpinfo informations to a (seperate?) logfile.
  * @todo Add function to list the file owner and group of a complete directory 

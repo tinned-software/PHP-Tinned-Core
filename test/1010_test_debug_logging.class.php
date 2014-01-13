@@ -1,18 +1,15 @@
 <?php
 /**
- * Debug_Logging class test file
- * 
- * This test script runns tests on the Class.
- * 
  * @author Gerhard Steinbeis (info [at] tinned-software [.] net)
- * @copyright Copyright (c) 2008 - 2009, Gerhard Steinbeis
+ * @copyright Copyright (c) 2008 - 2014, Gerhard Steinbeis
+ * @version 0.7.1
  * @license http://opensource.org/licenses/GPL-3.0 GNU General Public License, version 3
- * 
  * @package framework
  * @subpackage debug
  * 
- * @version 0.7
+ * Debug_Logging class test file
  * 
+ * This test script runs tests on the Class.
  * 
 **/
 
