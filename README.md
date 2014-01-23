@@ -1,13 +1,28 @@
 PHP-Tinned-Core
 ===============
-This package contains the basic Core functionality for the Tinned-Framework.
+The Core Module contains the basic Core functionality for the Tinned-Framework.
 
 Class Building Block
 --------------------
-The Main class contained in this package provides basic debugging and error 
+The Main class contained in this module provides basic debugging and error 
 reporting functions to any class which inherits from it. It is the base of 
-all of the classes included in any of the PHP-Tinned Framework packagesm, thus
-making the Core Package a prerequisite of any of the Framework's other packages.
+all of the classes included in any of the PHP-Tinned Framework modules, thus
+making the Core Module a prerequisite of any of the Framework's other modules.
+
+### Using the Tinned-Core with other Modules ###
+Tinned Framework Modules should all be checked at the same level of the
+directory hierarchy. I.e. the directory structure of the Tinned Modules on 
+your system should look like this:
+
+    /path/to/tinned/src/
+    /path/to/tinned/src/PHP-Tinned-Core
+    /path/to/tinned/src/PHP-Tinned-SQL
+    /path/to/tinned/src/PHP-Tinned-xxxx
+    /path/to/tinned/src/PHP-Tinned-yyyy
+    etc...
+
+The PHP-Tinned-Core must be available and placed in this fashion in the directory
+structure in order for the other modules to funtion.
 
 Debugging Functionality
 -----------------------
