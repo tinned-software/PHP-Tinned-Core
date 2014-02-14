@@ -15,6 +15,7 @@ directory hierarchy. I.e. the directory structure of the Tinned Modules on
 your system should look like this:
 
     /path/to/tinned/src/
+    /path/to/tinned/src/log
     /path/to/tinned/src/PHP-Tinned-Core
     /path/to/tinned/src/PHP-Tinned-SQL
     /path/to/tinned/src/PHP-Tinned-xxxx
@@ -23,6 +24,9 @@ your system should look like this:
 
 The PHP-Tinned-Core must be available and placed in this fashion in the directory
 structure in order for the other modules to funtion.
+
+For log files, the log directory should be created and should be writable by the
+user or process which is accessing the PHP files. 
 
 Debugging Functionality
 -----------------------

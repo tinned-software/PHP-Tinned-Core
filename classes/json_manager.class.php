@@ -192,28 +192,28 @@ class JSON_Manager extends Main
     
     
     
-    /**
-     * Set configured value for always numbered elements.
-     *
-     * Numbered elements forces that every element has a numeric index of zero
-     * even if the element is an only child, i.e. has no sibling elements. See
-     * example below:
-     * <pre>
-     *     Non Numbered         ||||||||||||           Numbered
-     *
-     *  [price] => 49.99        <= versus =>  [price] =>
-     *                          <= versus =>  (
-     *                          <= versus =>      [0] =>  49.99
-     *                          <= versus =>  )
-     * </pre>
-     * 
-     * Default value for this setting is FALSE.
-     * 
-     * @access public
-     * @see get_numbered_elements()
-     * 
-     * @param boolean $enable
-    **/
+    // *
+    //  * Set configured value for always numbered elements.
+    //  *
+    //  * Numbered elements forces that every element has a numeric index of zero
+    //  * even if the element is an only child, i.e. has no sibling elements. See
+    //  * example below:
+    //  * <pre>
+    //  *     Non Numbered         ||||||||||||           Numbered
+    //  *
+    //  *  [price] => 49.99        <= versus =>  [price] =>
+    //  *                          <= versus =>  (
+    //  *                          <= versus =>      [0] =>  49.99
+    //  *                          <= versus =>  )
+    //  * </pre>
+    //  * 
+    //  * Default value for this setting is FALSE.
+    //  * 
+    //  * @access public
+    //  * @see get_numbered_elements()
+    //  * 
+    //  * @param boolean $enable
+    // *
     /*
     public function set_numbered_elements($enable)
     {
@@ -240,7 +240,7 @@ class JSON_Manager extends Main
      * 
      * NOTE: disabling this check will attempt to force UTF-8 encoding.
      * Please keep in mind that these functions will ONLY successfully convert 
-     * the specified charcater set to UTF-8 if the input character set.
+     * the specified charcater set to UTF-8 if the input encoding is set.
      * 
      * Default value for this setting is TRUE.
      * 
